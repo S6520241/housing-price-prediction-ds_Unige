@@ -52,3 +52,61 @@ La specifica dettagliata del progetto fornita dai docenti è inclusa nel file **
 ## 👤 Autore
 Francesco Giuseppino (Matricola: 6520241)  
 Corso di Laurea in Informatica – Università degli Studi di Genova (UniGe)   
+
+
+_________________________________________________________
+
+# DataScience_Unige
+
+# California Housing Price Classification - Data Science Final Project
+
+Project developed for the **Introduction to Data Science** course (Academic Year 2025/2026) at the University of Genoa (UniGe).
+
+## 📋 Project Overview
+This repository contains the end-to-end Data Science pipeline for the multi-class classification of California housing prices. The goal is to predict the price tier (`median_house_value`, divided into 5 discrete classes) of an unseen test set, starting from geographical, demographic, and structural housing information.
+
+The work is divided into two main components required by the assignment:
+1. **A Jupyter Notebook (`.ipynb`)**: containing exploratory data analysis, data cleaning, handling missing values, feature transformation (log-transform), and comparative evaluation of various machine learning models using Cross-Validation.
+2. **An executable Python script (`S6520241.py`)**: configured to train the best model on the complete training set and export predictions on the test file.
+
+---
+
+## ⚙️ Pipeline and Implemented Algorithms
+The project compares different classification approaches using the `scikit-learn` library:
+* **Pre-processing and Cleaning:** Handling missing values via mean-based imputation (strictly calculated on the training set to prevent *data leakage*), feature standardization (`StandardScaler`), and logarithmic transformations (`np.log1p`) to reduce numerical feature skewness.
+* **Quadratic Loss (Ridge Classifier):** Implemented via a *One-vs-Rest* strategy to handle multi-class classification, analyzing the coefficients associated with geographical and socio-economic features.
+* **Logistic Loss (Logistic Regression):** Regularized linear classifier (also in *One-vs-Rest* mode), studying the effect of the regularization parameter $C$ on generalization accuracy.
+* **k-Nearest Neighbors (k-NN):** A *lazy learning* algorithm, evaluating accuracy across different values of $k$ to balance overfitting and underfitting.
+* **Decision Trees (Decision Tree Classifier):** Optimized using `GridSearchCV` (analyzing max depth `max_depth` and minimum samples per leaf `min_samples_leaf`) to prevent overfitting. It proved to be the best-performing model in the comparison.
+
+---
+
+## 📊 Results and Best Model
+From the Cross-Validation analysis (K-Fold with $k=5$), the **Decision Tree** model achieved the highest generalization performance (average accuracy close to 58.8%), effectively leveraging key features such as median income (`median_income`), distance to the coast (`distance_to_coast`), and geographical coordinates.
+
+---
+
+## 🚀 Execution Instructions
+
+### System Requirements
+The inference script is designed to run with the standard reference libraries specified by the course instructors:
+* `python` >= 3.8
+* `pandas`
+* `numpy`
+* `scikit-learn`
+
+### Running the Test Script
+The script strictly complies with the command-line parameters required for automated evaluation:
+
+```bash
+python S6520241.py --train houses_data.csv --test houses_test.csv
+```
+Execution will automatically generate the output file S6520241.txt containing one class prediction per row of the test dataset
+
+## 📄 Project Documentation
+The detailed project specifications provided by the instructors are included in the descrizione_progetto.pdf file located in the repository.
+
+## 👤 Author
+Francesco Giuseppino (Student ID: 6520241)
+
+Bachelor's Degree in Computer Science – University of Genoa (UniGe)
