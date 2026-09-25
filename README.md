@@ -46,6 +46,9 @@ python S6520241.py --train houses_data.csv --test houses_test.csv
 
 L'esecuzione genererà automaticamente il file di output S6520241.txt contenente una predizione di classe per ogni riga del dataset di test
 
+## 📄 Documentazione del Progetto
+La specifica dettagliata del progetto fornita dai docenti è inclusa nel file **`descrizione_progetto.pdf`** presente nella repository.
+
 ## 👤 Autore
 Francesco Giuseppino (Matricola: 6520241)  
 Corso di Laurea in Informatica – Università degli Studi di Genova (UniGe)   
