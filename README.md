@@ -5,7 +5,7 @@
 Progetto sviluppato per il corso di **Introduzione alla Data Science** (Anno Accademico 2025/2026) presso l'Università degli Studi di Genova (UniGe).
 
 ## 📋 Panoramica del Progetto
-Questo repository contiene la pipeline end-to-end di Data Science per la classificazione multi-classe dei prezzi delle case in California. L'obiettivo è prevedere la fascia di prezzo (`median_house_value`, suddivisa in 5 classi discrete) di un set di test inedito[cite: 13], partendo da informazioni geografiche, demografiche e strutturali delle abitazioni.
+Questo repository contiene la pipeline end-to-end di Data Science per la classificazione multi-classe dei prezzi delle case in California. L'obiettivo è prevedere la fascia di prezzo (`median_house_value`, suddivisa in 5 classi discrete) di un set di test inedito, partendo da informazioni geografiche, demografiche e strutturali delle abitazioni.
 
 Il lavoro è suddiviso in due componenti principali richieste dalla consegna:
 1. **Un Jupyter Notebook (`.ipynb`)**: contenente l'analisi esplorativa, la pulizia dei dati, la gestione dei valori mancanti, la trasformazione delle feature (log-transform) e la valutazione comparativa di diversi modelli di machine learning tramite Cross-Validation.
